@@ -1,26 +1,25 @@
 //import { useState } from 'react';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import { BrowserRouter as Router,Route,Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './components/Home';
+import Ofertas from './components/Ofertas';
+import Infaltables from './components/Infaltables';
+import Login from './components/Login'; 
+import Footer from './components/Footer'
 
 function App() {
-
   return (
-    <div>
-      <Router>
-        <div>
-          <NavBar/>
-          <Routes>
-              <Route path='/' element={<Home/>}  />
-              <Route path='/about' element={<About/>}  />
-              <Route path='/contact' element={<Contact/>}  />
-          </Routes>
-        </div>
-      </Router>
-    </div>
-  )
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/administracion" element={<Login />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/ofertas" element={<Ofertas />} />
+        <Route path="/infaltables" element={<Infaltables />} />
+      </Routes>
+      <Footer/>
+    </Router>
+  );
 }
 
-export default App
+export default App;
